@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Merchant Retention Dashboard</h2>
+<p><strong>Retention Rate:</strong> {{ retention }}%</p>
+
+<h4>⚠️ At-Risk Merchants</h4>
+<table>
+  <tr><th>ID</th><th>Last Transaction</th><th>Drop %</th></tr>
+  {% for m in risks %}
+  <tr>
+    <td>{{ m.merchant_id }}</td>
+    <td>{{ m.last_txn }}</td>
+    <td>{{ m.drop_pct }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
