@@ -13,7 +13,7 @@ def dashboard():
 
     # Construct the path to the data file relative to the project root
     # Go up one directory from 'app' to 'retention_dashboard', then into 'data'
-    data_file_path = os.path.join(current_dir, '..', 'data', 'transactions.csv')
+    data_file_path = os.path.join(current_dir, '..', 'data', 'transaction.csv')
 
     df = pd.read_csv(data_file_path, parse_dates=['date'])
     risk_merchants, retention_rate = get_at_risk_merchants(df)
